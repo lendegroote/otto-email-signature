@@ -117,17 +117,17 @@ function sig(logo, banner){
 <td valign="top" width="100" style="padding:0 17px 0 0;"><a href="https://www.ottocreatives.com" target="_blank"><img src="${logo}" width="100" height="100" alt="Otto Creatives" style="display:block;border:0;"></a></td>
 <td valign="top" style="${F}font-size:14px;line-height:20px;color:#3E4043;">
 <div style="font-size:16px;line-height:22px;font-weight:bold;color:#000000;">${n}</div>
-<div>${t} at Otto Creatives &middot; The first creative studio for product teams</div>
+<div>${t} at Otto Creatives &middot; Product design, brand, and marketing for B2B SaaS</div>
 <div style="height:18px;line-height:18px;font-size:1px;">&nbsp;</div>
 ${p ? `<div><a href="tel:${tel}" style="${L}">${esc(p)}</a></div>` : ""}
-<div><a href="https://www.ottocreatives.com" target="_blank" style="${L}">www.ottocreatives.com</a></div>
+<div><a href="https://www.ottocreatives.com" target="_blank" style="${L}">ottocreatives.com</a></div>
 </td></tr></table></td></tr>
 <tr><td><a href="https://www.ottocreatives.com" target="_blank"><img src="${banner}" width="600" height="132" alt="Do your brand, product and content tell the same story? We build all three, for B2B SaaS" style="display:block;border:0;"></a></td></tr>
 </table>`;
 }
 function plainSig(){
   const p = $("f-phone").value.trim();
-  return [$("f-name").value.trim(), `${$("f-title").value.trim()} at Otto Creatives · The first creative studio for product teams`, "", p, "www.ottocreatives.com"].filter((x,i)=>x||i===2).join("\n");
+  return [$("f-name").value.trim(), `${$("f-title").value.trim()} at Otto Creatives · Product design, brand, and marketing for B2B SaaS`, "", p, "ottocreatives.com"].filter((x,i)=>x||i===2).join("\n");
 }
 const status = $("status");
 function say(m, kind){ status.textContent = m; status.className = "status " + (kind||"ok"); }
