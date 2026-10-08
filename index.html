@@ -115,7 +115,8 @@ const BANNERS = {
 const VARIANTS = [["animated","1. Animated"],["none","2. No banner","(for Alexis)"],["dark","3. Dark banner"]];
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
-function sig(logo, useUrl, key){
+function sig(logo, useUrl, key){ return sigRaw(logo, useUrl, key).replace(/>\s+</g, "><").trim(); }
+function sigRaw(logo, useUrl, key){
   const b = BANNERS[key]; const banner = b ? (useUrl ? b.url : b.preview) : "";
   const n = esc($("f-name").value.trim() || "Your Name");
   const t = esc($("f-title").value.trim() || "Your title");
